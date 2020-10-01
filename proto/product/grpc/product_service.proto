@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "product/protobuf/product.proto";
+
+package product.grpc;
+
+service ProductService {
+
+    rpc GetAllProducts (product.protobuf.CProduct.Param) returns (stream product.protobuf.CProduct.ProductsOrError);
+
+}

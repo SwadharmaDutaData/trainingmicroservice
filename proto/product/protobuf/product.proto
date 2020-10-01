@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+import "product/protobuf/stock.proto";
+
+package product.protobuf;
+
+message CProduct {
+
+    message Product {
+        int64 id = 1;
+        string name = 2;
+        string description = 3;
+        product.protobuf.CStock.Stock stock = 4;
+    }
+
+    message Products {
+        repeated product.protobuf.CProduct.Product record = 1;
+    }
+
+    message Param {
+        int32 page = 1;
+        int32 recordsPerPage = 2;
+        google.protobuf.Value sortBy = 3;
+    }
+
+    message ProductsOrError {
+        oneof type {
+            google.protobuf.Value error = 1;
+            product.protobuf.CProduct.Products data = 2;
+        }
+    }
+}

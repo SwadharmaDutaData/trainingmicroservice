@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+package product.protobuf;
+
+message CStock {
+    
+    message Stock {
+        int32 number = 1;
+        google.protobuf.Timestamp lastIncoming = 2;
+        google.protobuf.Timestamp lastOutgoing = 3;
+    }
+
+    message TimestampOrError {
+        oneof type {
+            google.protobuf.Value error = 1;
+            google.protobuf.Timestamp outOfStockTime = 2;
+        }
+    }
+}

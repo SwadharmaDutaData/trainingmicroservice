@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "product/protobuf/product.proto";
+import "product/protobuf/stock.proto";
+
+package product.grpc;
+
+service StockService {
+
+    rpc GetOutOfStockEstimation (product.protobuf.CProduct.Product) returns (stream product.protobuf.CStock.TimestampOrError);
+
+}
