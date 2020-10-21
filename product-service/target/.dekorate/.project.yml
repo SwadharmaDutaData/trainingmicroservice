@@ -1,0 +1,15 @@
+---
+root: file:///D:/TrainingMicroservices/product-service/
+dekorateInputDir: null
+dekorateOutputDir: META-INF/dekorate
+dekorateMetaDir: ../.dekorate
+buildInfo:
+  name: product-service
+  version: 0.0.1-SNAPSHOT
+  packaging: jar
+  buildTool: maven
+  buildToolVersion: 3.6.3
+  outputFile: file:///D:/TrainingMicroservices/product-service/target/product-service-0.0.1-SNAPSHOT.jar
+  classOutputDir: file:///D:/TrainingMicroservices/product-service/target/classes/
+  resourceDir: file:///D:/TrainingMicroservices/product-service/target/classes/
+scmInfo: null

@@ -1,0 +1,111 @@
+---
+project:
+  root: file:///D:/TrainingMicroservices/product-service/
+  dekorateInputDir: null
+  dekorateOutputDir: META-INF/dekorate
+  dekorateMetaDir: ../.dekorate
+  buildInfo:
+    name: product-service
+    version: 0.0.1-SNAPSHOT
+    packaging: jar
+    buildTool: maven
+    buildToolVersion: 3.6.3
+    outputFile: file:///D:/TrainingMicroservices/product-service/target/product-service-0.0.1-SNAPSHOT.jar
+    classOutputDir: file:///D:/TrainingMicroservices/product-service/target/classes/
+    resourceDir: file:///D:/TrainingMicroservices/product-service/target/classes/
+  scmInfo: null
+partOf: ""
+name: product-service
+version: 0.0.1-SNAPSHOT
+labels:
+- key: version
+  value: v1
+envVars:
+- name: JAVA_OPTS
+  value: -Xmx=256M -XX:+UseSerialGC -server
+  secret: ""
+  configmap: ""
+  field: ""
+- name: JAVA_OPTIONS
+  value: -Xmx=256M -XX:+UseSerialGC -server
+  secret: ""
+  configmap: ""
+  field: ""
+- name: VALUE
+  value: v1
+  secret: ""
+  configmap: ""
+  field: ""
+- name: JAVA_OPTS
+  value: -Xmx=256M -XX:+UseSerialGC -server
+  secret: ""
+  configmap: ""
+  field: ""
+- name: JAVA_OPTIONS
+  value: -Xmx=256M -XX:+UseSerialGC -server
+  secret: ""
+  configmap: ""
+  field: ""
+- name: configMapRef
+  value: ""
+  secret: ""
+  configmap: postgres-product-config
+  field: ""
+- name: JAVA_OPTS
+  value: -Xmx=256M -XX:+UseSerialGC -server
+  secret: ""
+  configmap: ""
+  field: ""
+- name: JAVA_OPTIONS
+  value: -Xmx=256M -XX:+UseSerialGC -server
+  secret: ""
+  configmap: ""
+  field: ""
+workingDir: ""
+serviceAccount: ""
+host: ""
+ports:
+- name: http
+  containerPort: 8080
+  hostPort: 0
+  path: /
+  protocol: TCP
+- name: http
+  containerPort: 8080
+  hostPort: 0
+  path: /
+  protocol: TCP
+- name: grpc
+  containerPort: 9090
+  hostPort: 0
+  path: /
+  protocol: TCP
+- name: http
+  containerPort: 8080
+  hostPort: 0
+  path: /
+  protocol: TCP
+serviceType: LoadBalancer
+imagePullPolicy: IfNotPresent
+livenessProbe:
+  httpActionPath: /actuator/info
+  execAction: ""
+  tcpSocketAction: ""
+  initialDelaySeconds: 0
+  periodSeconds: 30
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 3
+readinessProbe:
+  httpActionPath: /actuator/health
+  execAction: ""
+  tcpSocketAction: ""
+  initialDelaySeconds: 0
+  periodSeconds: 30
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 3
+expose: false
+autoDeployEnabled: false
+replicas: 1
+headless: false
